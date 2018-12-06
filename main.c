@@ -29,10 +29,10 @@ int main()
 	float db = 9998.543123521;
 	//cnt =  printf("sakenism\n");
 	
-	//printf("%0+5d\n", 42);
-	//ft_printf("%3.2d", -1);
-	printf("u%4.5i\n", 42);
-	ft_printf("m%4.5i\n", 42);
+	printf("u%0+5d\n", 42);
+	ft_printf("m%0+5d\n", 42);
+	//ft_printf("u% u\n", 42);
+	//ft_printf("m% 4i\n", 42);
 	//ft_printf("m% 4.5i\n", 42);
 	//ft_printf("u% 4.5i\n", 42);
 	//cnt = printf("@moulitest: %#.o %#.0o\n", 0, 0);
