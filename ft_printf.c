@@ -664,6 +664,7 @@ int			tenth_check(char **ind, t_flags *t, int ker1, int ker2)
 	unsigned char			uc;
 	unsigned long long		ull;
 	unsigned short			ush;
+	unsigned long			ul;
 	int						sz;
 
 	if (**ind == 'h' && *(*ind + 1) == 'h' && *(*ind + 2) == 'u')
@@ -723,6 +724,39 @@ int			tenth_check(char **ind, t_flags *t, int ker1, int ker2)
 			ft_putchar(' ');
 		else if(!(!ker1 && t->tochka && !ker2 && !ull))
 			ft_putull(ull);
+		//else if (!(t->tochka && !i))
+			//ft_putchar(' ');
+		//printf(" %d %d\n", ker1, max(ker2 + t->znak, sz));
+		if (t->minus && ker1 > (max(ker2 + t->znak, sz) ))
+			pr_pre(ker1, (max(ker2 + t->znak, sz)), ' ');
+	//	printf("hey");
+		//printf("sz = %d %d\n", ker1, ker2);
+		return (1);
+	}
+	else if (**ind == 'l' && *(*ind + 1) == 'u')
+	{
+		*ind += 1;
+		ul = va_arg(*g_arg, unsigned long);
+		if (t->tochka)
+		{
+			t->cha = ' ';
+			t->nol = 0;
+		}
+		//printf("%u\n", ul);
+		sz = uminisz(ul) + t->znak;
+		if (!t->tochka)
+			ker2 = sz - 1;
+		if (!t->minus && ker1 > (max(ker2 + t->znak, sz)) && !t->nol)
+			pr_pre(ker1, (max(ker2 + t->znak, sz)), ' ');
+		if (!t->minus && ker1 > (max(ker2 + t->znak, sz)) && t->nol)
+			pr_pre(ker1, (max(ker2 + t->znak, sz)), '0');
+		if (t->tochka)
+			pr_zero(ker2 - uminisz(ul));
+		//printf("k=%d %d\n", ker1, ker2);
+		if (ker1 && t->tochka && !ker2)
+			ft_putchar(' ');
+		else if(!(!ker1 && t->tochka && !ker2 && !ul))
+			ft_putull(ul);
 		//else if (!(t->tochka && !i))
 			//ft_putchar(' ');
 		//printf(" %d %d\n", ker1, max(ker2 + t->znak, sz));
