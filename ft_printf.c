@@ -143,7 +143,7 @@ int			beginning(char **ind, t_flags *t)
 
 void		checkprobel(t_flags *t, long long n, int ker1)
 {
-	if (t->znak + t->minus + t->hash + t->nol + ker1 + t->tochka == 0 && t->probel && n > 0)
+	if (!t->znak && n > 0 && t->probel)
 		ft_putchar(' ');
 }
 
@@ -275,6 +275,7 @@ int			first_check(char **ind, t_flags *t, int ker1, int ker2)
 	{
 		db = va_arg(*g_arg, double);
 		plusf(db, t->znak);
+		checkprobel(t, (long long)(db), ker1);
 		ft_putfloat(ker1, t->tochka ? ker2 : 6, db, t->cha, t->minus, t->hash);
 		(*ind)++;
 		return (1);
@@ -293,6 +294,7 @@ int			second_check(char **ind, t_flags *t, int ker1, int ker2)
 	{
 		ldb = va_arg(*g_arg, long double);
 		plusf(ldb, t->znak);
+		checkprobel(t, (long long)(ldb), ker1);
 		ft_putfloat(ker1, t->tochka ? ker2 : 6, ldb, t->cha, t->minus, t->hash);
 		if (!ker2 && t->hash)
 			ft_putchar('.');
@@ -347,6 +349,7 @@ int			second_check(char **ind, t_flags *t, int ker1, int ker2)
 			sz = i < 0 ? sz + 1: sz;
 		if (!t->tochka)
 			ker2 = sz - 1;
+		//printf("%d\n", ker2 + t->znak);
 		if (!t->minus && ker1 > (max(ker2 + t->znak, sz)) && !t->nol)
 			pr_pre(ker1, (max(ker2 + t->znak, sz)), ' ');
 		checkprobel(t, i, ker1);
@@ -389,6 +392,7 @@ int			third_check(char **ind, t_flags *t, int ker1, int ker2)
 	{
 		db = va_arg(*g_arg, double);
 		plusf(db, t->znak);
+		checkprobel(t, (long long)(db), ker1);
 		ft_putfloat(ker1, t->tochka ? ker2 : 6, db, t->cha, t->minus, t->hash);
 		if (!ker2 && t->hash)
 			ft_putchar('.');

@@ -31,10 +31,10 @@ int main()
 	
 	//printf("%0+5d\n", 42);
 	//ft_printf("%3.2d", -1);
-	printf("u@moulitest: %.d %.0d\n", 42, 43);
-	ft_printf("m@moulitest: %.d %.0d\n", 42, 43);
-	//ft_printf("m%8.10o\n", 42);
-
+	printf("u%4.5i\n", 42);
+	ft_printf("m%4.5i\n", 42);
+	//ft_printf("m% 4.5i\n", 42);
+	//ft_printf("u% 4.5i\n", 42);
 	//cnt = printf("@moulitest: %#.o %#.0o\n", 0, 0);
 	//cnnt = ft_printf("@moulitest: %#.o %#.0o\n", 0, 0);
 	//printf("%d", ft_cnt_memory(p));

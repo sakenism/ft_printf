@@ -37,4 +37,6 @@ void ft_print_memory(void *p0)
 			ft_putchar(hex_digit((p >> i) & 0xf));
 		i -= 4;
 	}
+	if (!ok)
+		ft_putchar('0');
 }
