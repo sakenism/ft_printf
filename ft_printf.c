@@ -117,6 +117,7 @@ int			beginning(char **ind, t_flags *t)
 	//	(*ind)++;
 		t->nol = 0;
 		t->minus = 1;
+		t->cha = ' ';
 		return (1);
 	}
 	if (**ind == '#')
@@ -526,7 +527,7 @@ int			fifth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ui != 0 && t->hash)
 			ft_putchar('0');
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converter(ui, 8)) - t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converter(ui, 8)));
 		checkprobel(t, ui, ker1);
 		if (ui != 0 || !t->tochka || t->hash)
 			ft_putstr(ft_converter(ui, 8));
@@ -555,7 +556,7 @@ int			sixth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (uc != 0 && t->hash)
 			ft_putchar('0');
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterhh(uc, 8)) - t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterhh(uc, 8)));
 		checkprobel(t, uc, ker1);
 		if (uc != 0 || !t->tochka || t->hash)
 			ft_putstr(ft_converterhh(uc, 8));
@@ -585,7 +586,7 @@ int			seventh_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ush != 0 && t->hash)
 			ft_putchar('0');
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterh(ush, 8)) - t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterh(ush, 8)));
 		checkprobel(t, ush, ker1);
 		if (ush != 0 || !t->tochka || t->hash)
 			ft_putstr(ft_converterh(ush, 8));
@@ -615,7 +616,7 @@ int			eighth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ull != 0 && t->hash)
 			ft_putchar('0');
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterll(ull, 8)) - t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterll(ull, 8)));
 		checkprobel(t, ull, ker1);
 		if (ull != 0 || !t->tochka || t->hash)
 			ft_putstr(ft_converterll(ull, 8));
@@ -645,7 +646,7 @@ int			ninth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ul != 0 && t->hash)
 			ft_putchar('0');
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterl(ul, 8)) - t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterl(ul, 8)));
 		checkprobel(t, ul, ker1);
 		if (ul != 0 || !t->tochka || t->hash)
 			ft_putstr(ft_converterl(ul, 8));
@@ -820,7 +821,7 @@ int			eleventh_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (uc != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0x");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterhh(uc, -16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterhh(uc, -16)));
 		checkprobel(t, uc, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -852,7 +853,7 @@ int			twelfth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ull != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0x");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterll(ull, -16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterll(ull, -16)));
 		checkprobel(t, ull, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -884,7 +885,7 @@ int			thirteenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ui != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0x");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converter(ui, -16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converter(ui, -16)));
 		checkprobel(t, ui, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -915,7 +916,7 @@ int			fourteenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ush != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0x");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterh(ush, -16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterh(ush, -16)));
 		checkprobel(t, ush, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -948,7 +949,7 @@ int			fifteenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ul != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0x");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterl(ul, -16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterl(ul, -16)));
 		checkprobel(t, ul, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -980,7 +981,7 @@ int			sixteenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ush != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0X");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterh(ush, 16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterh(ush, 16)));
 		checkprobel(t, ush, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -1012,7 +1013,7 @@ int			seventeenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ul != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0X");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterl(ul, 16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterl(ul, 16)));
 		checkprobel(t, ul, ker1);
 		if (ul != 0 || !t->tochka || t->hash)
 			ft_putstr(ft_converterl(ul, 16));
@@ -1044,7 +1045,7 @@ int			eightteenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ull != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0X");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterll(ull, 16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterll(ull, 16)));
 		checkprobel(t, ull, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -1075,7 +1076,7 @@ int			nineteenth_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (uc != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0X");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converterhh(uc, 16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converterhh(uc, 16)));
 		checkprobel(t, uc, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');
@@ -1107,7 +1108,7 @@ int			twentith_check(char **ind, t_flags *t, int ker1, int ker2)
 		if (ui != 0 && t->hash && t->cha == ' ')
 			ft_putstr("0X");
 		if (t->tochka)
-			pr_zero(ker2 - ft_strlen(ft_converter(ui, 16)) - 2 * t->hash);
+			pr_zero(ker2 - ft_strlen(ft_converter(ui, 16)));
 		checkprobel(t, ui, ker1);
 		if (ker1 && t->tochka && !ker2)
 			ft_putchar(' ');

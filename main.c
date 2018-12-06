@@ -31,8 +31,8 @@ int main()
 	
 	//printf("%0+5d\n", 42);
 	//ft_printf("%3.2d", -1);
-	printf("u%+.20Lf\n", e);
-	ft_printf("m%+.20Lf\n", e);
+	printf("u@moulitest: %.d %.0d\n", 42, 43);
+	ft_printf("m@moulitest: %.d %.0d\n", 42, 43);
 	//ft_printf("m%8.10o\n", 42);
 
 	//cnt = printf("@moulitest: %#.o %#.0o\n", 0, 0);
